@@ -1,13 +1,16 @@
 import {} from 'antd';
 import './App.css';
-import Navbar from './components/Navbar/Navbar';
+import { useState } from 'react';
 import Sidebar from './components/Sidebar/Sidebar';
+import Dashboard from './components/Dashboard/Dashboard';
 
 function App() {
+  const [showSidebar, setShowSidebar] = useState(false);
+  
   return (
     <div className="App">
-      <Sidebar />
-      <Navbar />
+      <Sidebar showSidebar={showSidebar} />
+      <Dashboard showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
     </div>
   );
 }
